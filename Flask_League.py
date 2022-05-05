@@ -1,4 +1,4 @@
-from flask import Flask,g 
+from flask import Flask,g, render_template
 import sqlite3
 
 app = Flask(__name__)
@@ -17,11 +17,14 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
+@app.route('/home')
+def home():
+    return render_template("home.html")
 
-@app.route("/")
-def index():
+@app.route("/champions")
+def champions():
     cursor = get_db().cursor()
-    sql = "SELECT * from champion"
+    sql = "SELECT * from champions"
     cursor.execute(sql)
     results = cursor.fetchall()
     return str(results)
