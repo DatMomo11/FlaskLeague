@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" contents="width=device-width", "initial-scale=1.0">
+    <meta http-equive="X-UA-Compatible" contents="ie=edge">
+    <title>List of champions</title>
+</head>
+
+<body>
+    <h1>List of Champions</h1> 
+    {% for champions in results%}
+        <h2> Name: {{champions[1]}} </h2>
+        <h2> Class: {{champions[2]}} </h2>
+        <h2> Role: {{champions[3]}} </h2>
+        <h2> Description: {{champions[4]}} </h2>
+        <h2> {{champions[5]}}</h2>
+    {% endfor %}
+</body>
+
+</html>

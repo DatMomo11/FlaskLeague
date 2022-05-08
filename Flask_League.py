@@ -27,7 +27,8 @@ def champions():
     sql = "SELECT * from champions"
     cursor.execute(sql)
     results = cursor.fetchall()
-    return str(results)
+    return render_template("champions.html", results=results)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
