@@ -6,6 +6,7 @@
     <meta http-equive="X-UA-Compatible" contents="ie=edge">
     <title>List of champions</title>
     <link rel="stylesheet" href={{url_for('static',filename='style.css')}}
+    <img src= "Talon_OriginalCentered.webp">
     
 </head>
 
@@ -17,6 +18,8 @@
         <h2> Class: {{champions[2]}} </h2>
         <h2> Role: {{champions[3]}} </h2>
         <h2> Description: {{champions[4]}} </h2>
+        <img src={{url_for('static',filename='images/'+champions[5])}}   > 
+        
         </div>
     {% endfor %}
 </body>
