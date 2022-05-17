@@ -11,14 +11,34 @@
 </head>
 
 <body>
-    <h1>List of Champions</h1> 
+    <div class = logo-img>
+        <h1> League of Legends page thing </h1>
+        <img  src="static/images/LoL-Logo.png" width="180" height="90">
+    </div>
+
+    <header>
+        
+        <nav class = center>
+            
+            <ul>
+                
+                <li class = button><a href="home">Home</a></li>
+                <li class = button><a href="champions">Champions</a></li>
+                <li class = button><a href="home">Guides</a></li>
+                <li class = button><a href="champions">Help</a></li>
+            </ul>
+        </nav>
+    
+    </header>
+
+     
     {% for champions in results%}
         <div class = list-border>
         <h2> Name: {{champions[1]}} </h2>
         <h2> Class: {{champions[2]}} </h2>
         <h2> Role: {{champions[3]}} </h2>
         <h2> Description: {{champions[4]}} </h2>
-        <img src={{url_for('static',filename='images/'+champions[5])}}   > 
+        <img src={{url_for('static',filename='images/'+champions[5])}} width="400" height="250"  > 
         
         </div>
     {% endfor %}
