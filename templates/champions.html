@@ -12,23 +12,23 @@
 
 <body>
     <div class = logo-img>
-        <h1> League of Legends page thing </h1>
+
         <img  src="static/images/LoL-Logo.png" width="180" height="90">
+
     </div>
 
     <header>
         
-        <nav class = center>
+        <nav class = center-align>
             
             <ul>
-                
-                <li class = button><a href="home">Home</a></li>
-                <li class = button><a href="champions">Champions</a></li>
-                <li class = button><a href="home">Guides</a></li>
-                <li class = button><a href="champions">Help</a></li>
+                <a href="/"><li class = button>Home</li></a>
+                <a href="champions"><li class = button>Champions</li></a>
+                <a href="/"><li class = button>Guides</li></a>
+                <a href="/"><li class = button>Help</li></a>
             </ul>
         </nav>
-    
+        <h1 class = centerA> Champion List </h1>
     </header>
 
      
@@ -42,6 +42,21 @@
         
         </div>
     {% endfor %}
+    <div>
+        <form action="/add" method="post">
+        <h2> ENTER YOUR ITEM </h2>
+        <input type="text" name="Name">
+        <input type="text" name="Class">
+        <input type="text" name="Mainrole">
+        <input type="text" name="Description">
+        <input type="text" name="image_filename">
+        <input type="submit" name="add">
+        </form>
+    </div>
+
+
+
+
 </body>
 
 </html>
