@@ -29,6 +29,7 @@ def champions():
     results = cursor.fetchall()
     return render_template("champions.html", results=results)
 
+# doesn't work yet :(
 @app.route("/add", methods=["GET","POST"])
 def add():
     if request.method == "POST":
@@ -42,6 +43,24 @@ def add():
         cursor.execute(sql,(new_name,new_class,new_mainrole,new_description,new_image))
         get_db().commit
     return redirect("/champions")
+# Also doesn't work sadge
+@app.route('/delete', methods=["GET","POST"])
+def delete():
+    if request.method == "POST":
+        cursor = get_db().cursor()
+        id = int(request.form["item_name"])
+        sql = "DELETE FROM champions WHERE id=?"
+        cursor.execute(sql,(id,))
+        get_db().commit()
+    return redirect("/champions")
+
+@app.route('/guides')
+def guides():
+    return render_template("guides.html")
+
+@app.route('/FAQ')
+def FAQ():
+    return render_template("FAQ.html")
         
     
 
