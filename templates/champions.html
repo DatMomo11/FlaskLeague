@@ -28,8 +28,9 @@
                 <a href="FAQ"><li class = button>FAQ</li></a>
             </ul>
         </nav>
-        <h1 class = centerA> Champion List </h1>
+        
     </header>
+    <h1 class = centerA> Champion List </h1>
 
      
     {% for champions in results%}
@@ -50,7 +51,7 @@
     {% endfor %}
     <div>
         <form action="/add" method="post">
-        <h2> ENTER YOUR ITEM </h2>
+        <h2> ENTER YOUR ITEM  (Name/Class/Role/Description/Image_url) </h2>
         <input type="text" name="Name">
         <input type="text" name="Class">
         <input type="text" name="Mainrole">

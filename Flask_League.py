@@ -3,7 +3,7 @@ import sqlite3
 
 app = Flask(__name__)
 
-DATABASE = 'FLask_League.db'
+DATABASE = 'Flask_League.db'
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -33,7 +33,8 @@ def champions():
 @app.route("/add", methods=["GET","POST"])
 def add():
     if request.method == "POST":
-        cursor = get_db().cursor()
+        db = get_db()    
+        cursor = db.cursor()
         sql = "INSERT INTO champions(Name,Class,MainRole,Description,image_filename) VALUES (?,?,?,?,?)"
         new_name = request.form["Name"]
         new_class = request.form["Class"]
@@ -41,9 +42,9 @@ def add():
         new_description = request.form["Description"]
         new_image = request.form["image_filename"]
         cursor.execute(sql,(new_name,new_class,new_mainrole,new_description,new_image))
-        get_db().commit
+        db.commit()
     return redirect("/champions")
-# Also doesn't work sadge
+
 @app.route('/delete', methods=["GET","POST"])
 def delete():
     if request.method == "POST":
@@ -63,7 +64,5 @@ def FAQ():
     return render_template("FAQ.html")
         
     
-
-
 if __name__ == "__main__":
     app.run(debug=True)

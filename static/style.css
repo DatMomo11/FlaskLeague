@@ -67,6 +67,7 @@ a:hover {
 
 .logo-img {
     position:absolute;
+    margin-left: 45px;
     
     
 }
@@ -93,10 +94,12 @@ a:hover {
 
 .center-align {
     margin:auto;
-    width:60%;
+    width:50%;
+    padding-top:10px;
 }
 
 .centerA {
     margin-top: 20px;
+    text-align:center;
     
 }
