@@ -39,7 +39,7 @@
         <h2> Class: {{champions[2]}} </h2>
         <h2> Role: {{champions[3]}} </h2>
         <h2> Description: {{champions[4]}} </h2>
-        <img src={{url_for('static',filename='images/'+champions[5])}} width="400" height="250"  > 
+        <img src={{url_for('static',filename='images/Champions/'+champions[5])}} width="400" height="250"  > 
         <form action="/delete" method="post">
         <input type="hidden" name="item_name" value="{{champions[0]}}">
         <input type="submit" value="delete">

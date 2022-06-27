@@ -62,7 +62,13 @@ def guides():
 @app.route('/FAQ')
 def FAQ():
     return render_template("FAQ.html")
+
+@app.route('/Talon')
+def Talon():
+    return render_template("Talon.html")
         
     
 if __name__ == "__main__":
     app.run(debug=True)
+    
+
