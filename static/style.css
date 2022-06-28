@@ -1,3 +1,8 @@
+html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -126,5 +131,22 @@ a:hover {
     
     text-align:right;
     float:right;
+
+}
+
+p {
+    margin-left: 10px;
+}
+
+.float-left-border2 {
+    border-style: solid;
+    margin-left: 50px;
+    width:45%;
+    padding:auto;
+    background-color: grey;
+
+    margin-bottom: 10px;
+    text-align: left;
+    float:left;
 
 }
