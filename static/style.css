@@ -150,3 +150,23 @@ p {
     float:left;
 
 }
+
+.champions-border {
+    border-style: solid;
+    margin-left: 50px;
+    width:40%;
+    padding:auto;
+    background-color: grey;
+    margin-bottom: 10px;
+    float:left;
+
+
+    
+}
+
+.champions-img-placement {
+    margin-left:auto;
+
+    
+
+}

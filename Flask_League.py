@@ -29,7 +29,7 @@ def champions():
     results = cursor.fetchall()
     return render_template("champions.html", results=results)
 
-# doesn't work yet :(
+
 @app.route("/add", methods=["GET","POST"])
 def add():
     if request.method == "POST":
