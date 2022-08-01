@@ -24,10 +24,15 @@ def home():
 @app.route("/champions")
 def champions():
     cursor = get_db().cursor()
-    sql = "SELECT * from champions"
+    sql = "SELECT * from champions join classes on champions.Class = classes.id;" 
     cursor.execute(sql)
     results = cursor.fetchall()
-    return render_template("champions.html", results=results)
+    cursor = get_db().cursor()
+    sql = "SELECT * from classes" 
+    cursor.execute(sql)
+    classes = cursor.fetchall()
+    
+    return render_template("champions.html", results=results, classes=classes)
 
 
 @app.route("/add", methods=["GET","POST"])
@@ -38,7 +43,7 @@ def add():
         sql = "INSERT INTO champions(Name,Class,MainRole,Description,image_filename) VALUES (?,?,?,?,?)"
         new_name = request.form["Name"]
         new_class = request.form["Class"]
-        new_mainrole = request.form["Mainrole"]
+        new_mainrole = request.form["MainRole"]
         new_description = request.form["Description"]
         new_image = request.form["image_filename"]
         cursor.execute(sql,(new_name,new_class,new_mainrole,new_description,new_image))

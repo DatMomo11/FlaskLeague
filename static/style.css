@@ -24,7 +24,7 @@ tr:nth-child(even) {
      margin-right: 200px;
      margin-left: 200px;
      margin-top: 50px;
-     
+     border-radius: 25px;
      padding-left: 20px; 
      background-color: grey;
      padding-bottom: 20px;
@@ -80,6 +80,7 @@ a:hover {
 .button {
   background-color: #4CAF50;
   border: solid;
+  border-radius: 25px;
   color: black;
   padding: 10px 50px;
   text-decoration: none;
@@ -87,6 +88,7 @@ a:hover {
   font-size: 16px;
   margin: 12px 0px;
   cursor: pointer;
+  
   
     
 }
@@ -106,6 +108,7 @@ a:hover {
 .centerA {
     margin-top: 20px;
     text-align:center;
+    margin-bottom: 20px;
     
 }
 
@@ -115,7 +118,7 @@ a:hover {
     width:45%;
     padding:auto;
     background-color: grey;
-
+    border-radius: 25px;
     text-align: left;
     float:left;
 
@@ -123,7 +126,7 @@ a:hover {
 
 .float-right-border {
     border-style: solid;
-
+    border-radius: 25px;
     margin-right: 50px;
     
     padding:auto;
@@ -144,7 +147,7 @@ p {
     width:45%;
     padding:auto;
     background-color: grey;
-
+    border-radius: 25px;
     margin-bottom: 10px;
     text-align: left;
     float:left;
@@ -155,10 +158,11 @@ p {
     border-style: solid;
     margin-left: 50px;
     width:40%;
-    padding:auto;
+    padding:30px;
     background-color: grey;
     margin-bottom: 10px;
     float:left;
+    border-radius: 25px;
 
 
     

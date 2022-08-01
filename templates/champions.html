@@ -36,7 +36,7 @@
     {% for champions in results%}
     <div class = list-border>
         <h2> Name: {{champions[1]}} </h2>
-        <h2> Class: {{champions[2]}} </h2>
+        <h2> Class: {{champions[7]}} </h2>
         <h2> Role: {{champions[3]}} </h2>
         <h2> Description: {{champions[4]}} </h2>
         <img src={{url_for('static',filename='images/Champions/'+champions[5])}} width="400" height="250"  > 
@@ -53,8 +53,14 @@
         <form action="/add" method="post">
         <h2> ENTER YOUR ITEM  (Name/Class/Role/Description/Image_url) </h2>
         <input type="text" name="Name">
-        <input type="text" name="Class">
-        <input type="text" name="Mainrole">
+        <label for="Class">Class:</label>
+        <select name="Class" id="Class">
+        {% for class in classes%}
+        <option value="{{class[0]}}">{{class[1]}}</option>  
+        {% endfor %}
+        </select>
+    
+        <input type="text" name="MainRole">
         <input type="text" name="Description">
         <input type="text" name="image_filename">
         <input type="submit" name="add">
