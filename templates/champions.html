@@ -37,12 +37,12 @@
     <div class = list-border>
         <h2> Name: {{champions[1]}} </h2>
         <h2> Class: {{champions[7]}} </h2>
-        <h2> Role: {{champions[3]}} </h2>
+        <h2> Role: {{champions[9]}} </h2>
         <h2> Description: {{champions[4]}} </h2>
         <img src={{url_for('static',filename='images/Champions/'+champions[5])}} width="400" height="250"  > 
         <form action="/delete" method="post">
         <input type="hidden" name="item_name" value="{{champions[0]}}">
-        <input type="submit" value="delete">
+        <!--<input type="submit" value="delete">-->
         </form>
     </div> 
         
@@ -52,6 +52,7 @@
     <div class= centerA>
         <form action="/add" method="post">
         <h2> ENTER YOUR ITEM  (Name/Class/Role/Description/Image_url) </h2>
+        <label for="name">Name:</label>
         <input type="text" name="Name">
         <label for="Class">Class:</label>
         <select name="Class" id="Class">
@@ -60,8 +61,16 @@
         {% endfor %}
         </select>
     
-        <input type="text" name="MainRole">
+        <label for="Role">Role:</label>
+        <select name="Role" id="Role">
+        {% for role in role %}
+        <option value="{{role[0]}}">{{role[1]}}</option>  
+        {% endfor %}
+        </select>
+        <label for="description">Description:</label>
         <input type="text" name="Description">
+        
+        <label for="image_filename">Image_Filename</label>
         <input type="text" name="image_filename">
         <input type="submit" name="add">
         </form>

@@ -1,7 +1,11 @@
-from flask import Flask,g, render_template, request, redirect
-import sqlite3
-
+from flask import Flask,g, render_template, request, redirect, flash,url_for
+import sqlite3, os
+from werkzeug.utils import secure_filename
 app = Flask(__name__)
+
+UPLOAD_FOLDER = '/static/images'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 DATABASE = 'Flask_League.db'
 
@@ -24,15 +28,35 @@ def home():
 @app.route("/champions")
 def champions():
     cursor = get_db().cursor()
-    sql = "SELECT * from champions join classes on champions.Class = classes.id;" 
+    sql = "SELECT * from champions join classes on champions.Class = classes.id join roles on champions.Role = roles.id" 
     cursor.execute(sql)
     results = cursor.fetchall()
+    
     cursor = get_db().cursor()
     sql = "SELECT * from classes" 
     cursor.execute(sql)
     classes = cursor.fetchall()
     
-    return render_template("champions.html", results=results, classes=classes)
+    cursor = get_db().cursor()
+    sql = "SELECT * from champions join roles on champions.Role = roles.id;" 
+    cursor.execute(sql)
+    role_results = cursor.fetchall()
+    
+    cursor = get_db().cursor()
+    sql = "SELECT * from roles" 
+    cursor.execute(sql)
+    role = cursor.fetchall()
+    
+    
+    
+
+    
+    
+    
+    
+   
+    
+    return render_template("champions.html", results=results, classes=classes,role_results=role_results,role=role)
 
 
 @app.route("/add", methods=["GET","POST"])
@@ -40,17 +64,17 @@ def add():
     if request.method == "POST":
         db = get_db()    
         cursor = db.cursor()
-        sql = "INSERT INTO champions(Name,Class,MainRole,Description,image_filename) VALUES (?,?,?,?,?)"
+        sql = "INSERT INTO champions(Name,Class,Role,Description,image_filename) VALUES (?,?,?,?,?)"
         new_name = request.form["Name"]
         new_class = request.form["Class"]
-        new_mainrole = request.form["MainRole"]
+        new_role = request.form["Role"]
         new_description = request.form["Description"]
         new_image = request.form["image_filename"]
-        cursor.execute(sql,(new_name,new_class,new_mainrole,new_description,new_image))
+        cursor.execute(sql,(new_name,new_class,new_role,new_description,new_image))
         db.commit()
     return redirect("/champions")
 
-@app.route('/delete', methods=["GET","POST"])
+'''@app.route('/delete', methods=["GET","POST"])
 def delete():
     if request.method == "POST":
         cursor = get_db().cursor()
@@ -58,7 +82,9 @@ def delete():
         sql = "DELETE FROM champions WHERE id=?"
         cursor.execute(sql,(id,))
         get_db().commit()
-    return redirect("/champions")
+    return redirect("/champions")'''
+
+
 
 @app.route('/guides')
 def guides():
