@@ -128,8 +128,8 @@ a:hover {
     border-style: solid;
     border-radius: 25px;
     margin-right: 50px;
-    
-    padding:auto;
+    margin-bottom: 20px;
+   
     background-color: grey;
     
     text-align:right;

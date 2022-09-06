@@ -28,7 +28,7 @@ def home():
 @app.route("/champions")
 def champions():
     cursor = get_db().cursor()
-    sql = "SELECT * from champions join classes on champions.Class = classes.id join roles on champions.Role = roles.id" 
+    sql = "SELECT * from champions join classes on champions.Class = classes.id join roles on champions.Role = roles.id join images on champions.image_filename = images.id" 
     cursor.execute(sql)
     results = cursor.fetchall()
     
@@ -47,16 +47,15 @@ def champions():
     cursor.execute(sql)
     role = cursor.fetchall()
     
+    cursor = get_db().cursor()
+    sql = "SELECT * from images" 
+    cursor.execute(sql)
+    images = cursor.fetchall()
     
     
-
     
-    
-    
-    
-   
-    
-    return render_template("champions.html", results=results, classes=classes,role_results=role_results,role=role)
+     
+    return render_template("champions.html", results=results, classes=classes,role_results=role_results,role=role,images=images)
 
 
 @app.route("/add", methods=["GET","POST"])
