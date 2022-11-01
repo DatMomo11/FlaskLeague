@@ -36,19 +36,20 @@
     {% for champions in results%}
     <div class = list-border>
         <h2> Name: {{champions[1]}} </h2>
-        <h2> Class: {{champions[7]}} </h2>
-        <h2> Role: {{champions[9]}} </h2>
+        <h2> Class: {{champions[9]}} </h2>
+        <h2> Role: {{champions[11]}} </h2>
         <h2> Description: {{champions[4]}} </h2>
-        <img src={{url_for('static',filename='images/Champions/'+champions[11])}} width="400" height="250"  > 
+        <img src={{url_for('static',filename='images/Champions/'+champions[13])}} width="400" height="250"  > 
         <form action="/delete" method="post">
         <input type="hidden" name="item_name" value="{{champions[0]}}">
         <!--<input type="submit" value="delete">-->
         </form>
     </div> 
-        
-        
-        
+    
+    
     {% endfor %}
+    
+    
     <div class= centerA>
         <form action="/add" method="post">
         <label for="name">Name:</label>

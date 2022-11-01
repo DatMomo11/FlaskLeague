@@ -24,10 +24,13 @@ tr:nth-child(even) {
      margin-right: 200px;
      margin-left: 200px;
      margin-top: 50px;
+     margin-bottom: 50px;
      border-radius: 25px;
+     border-color:white;
      padding-left: 20px; 
      background-color: grey;
      padding-bottom: 20px;
+     
 }
 
 ul {
@@ -43,13 +46,13 @@ ul {
 header {
     width: 100%;
     height: 80px;
-    background-color:#0d6e07;
+    background-color:rgb(57, 110, 31);
 }
 
 body,html {
     margin: 0;
     padding: 0;
-    background-color: green;
+    background-color: rgb(57, 110, 31);
 }
 
 li {
@@ -61,7 +64,7 @@ li {
 
 a {
     text-align: center;
-    color: black;
+    color: white;
     text-decoration: none;
     
 }
@@ -81,7 +84,8 @@ a:hover {
   background-color: #4CAF50;
   border: solid;
   border-radius: 25px;
-  color: black;
+  color: white;
+  border-color:white;
   padding: 10px 50px;
   text-decoration: none;
   display: inline-block;
@@ -102,20 +106,21 @@ a:hover {
 .center-align {
     margin:auto;
     width:50%;
-    padding-top:10px;
+    
 }
 
 .centerA {
     margin-top: 20px;
     text-align:center;
     margin-bottom: 20px;
+    color:white;
     
 }
 
 .float-left-border {
     border-style: solid;
     margin-left: 50px;
-    width:45%;
+    width:40%;
     padding:auto;
     background-color: grey;
     border-radius: 25px;
@@ -128,23 +133,34 @@ a:hover {
     border-style: solid;
     border-radius: 25px;
     margin-right: 50px;
-    margin-bottom: 20px;
-   
+    margin-bottom: 20px;  
     background-color: grey;
-    
     text-align:right;
     float:right;
-
 }
 
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+
 p {
-    margin-left: 10px;
+    color:white;
 }
 
 .float-left-border2 {
     border-style: solid;
     margin-left: 50px;
-    width:45%;
+    width:40%;
     padding:auto;
     background-color: grey;
     border-radius: 25px;
@@ -154,18 +170,16 @@ p {
 
 }
 
+
 .champions-border {
     border-style: solid;
-    margin-left: 50px;
+    margin-left: auto;
+    margin-right: auto;
     width:40%;
     padding:30px;
     background-color: grey;
     margin-bottom: 10px;
-    float:left;
-    border-radius: 25px;
-
-
-    
+    border-radius: 25px; 
 }
 
 .champions-img-placement {
@@ -174,3 +188,9 @@ p {
     
 
 }
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

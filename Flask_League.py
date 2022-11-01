@@ -111,6 +111,30 @@ def Talon():
     return render_template("Talon.html")
 
 
+#page for Azir guide from the guides page
+@app.route('/Azir')
+def Azir():
+    return render_template("Azir.html")
+
+
+#page for Cassiopeia guide from the guides page
+@app.route('/Cassiopeia')
+def Cassiopeia():
+    return render_template("Cassiopeia.html")
+
+
+#page for Rammus guide from the guides page
+@app.route('/Rammus')
+def Rammus():
+    return render_template("Rammus.html")
+
+
+#page for Zed guide from the guides page
+@app.route('/Zed')
+def Zed():
+    return render_template("Zed.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
     
